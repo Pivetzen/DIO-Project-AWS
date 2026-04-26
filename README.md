@@ -32,7 +32,59 @@ A implementação destes serviços na Abstergo Industries resultará em um contr
 
 ## Anexos
 
-[lista de anexos, como manuais, documentos, planilhas, entre outros]
+### Anexo 1: Estimativa de Economia
+
+**Objetivo:** Demonstrar a projeção de economia de custos operacionais e o retorno sobre o investimento (ROI) alcançado com a otimização da infraestrutura.
+
+![Gráfico de Estimativa de Economia](assets/chart.png)
+
+### Anexo 2: Configuração de Alertas (AWS Budgets)
+
+**Objetivo:** Estabelecer alertas automáticos para controle proativo de gastos e evitar surpresas na fatura.
+
+**Procedimento de Configuração:**
+1. **Acesso:** Navegue até *Billing and Cost Management* > *Budgets*.
+2. **Definição:** Criar *Cost Budget* com o valor mensal definido no planejamento financeiro.
+3. **Limiares de Alerta:**
+   - **80% do Orçamento:** E-mail de aviso para o Administrador Financeiro (análise preventiva).
+   - **100% do Orçamento:** E-mail crítico para Gestão de TI e Financeiro (intervenção imediata).
+
+### Anexo 3: Auditoria das Políticas de Ciclo de Vida (S3)
+
+**Objetivo:** Reduzir custos de armazenamento movendo dados inativos (backups/logs) para a classe *S3 Glacier* após 30 dias.
+
+**Especificação da Política (JSON para Auditoria):**
+
+```json
+{
+  "Rules": [
+    {
+      "ID": "MoverLogsParaGlacier",
+      "Status": "Enabled",
+      "Filter": {
+        "Prefix": "backups-logs/"
+      },
+      "Transitions": [
+        {
+          "Days": 30,
+          "StorageClass": "GLACIER"
+        }
+      ]
+    }
+  ]
+}
+```
+### Anexo 4: Parâmetros de Eficiência (Auto Scaling)
+
+**Objetivo:** Garantir escalabilidade horizontal mantendo a performance do sistema de farmácia dentro do orçamento.
+
+**Procedimento de Configuração:**
+- **Métrica de Referência:** Average CPU Utilization (Alvo: 60%).
+- **Capacidade Mínima:** 1 instância (garante o sistema sempre online).
+- **Capacidade Máxima:** 3 instâncias (limite para evitar custos inesperados em picos anômalos).
+- **Cooldown:** 300 segundos (evita instabilidade no escalonamento).
+
+------
 
 Assinatura do Responsável pelo Projeto:
 
