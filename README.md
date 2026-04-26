@@ -1,8 +1,8 @@
 # RELATÓRIO DE IMPLEMENTAÇÃO DE SERVIÇOS AWS
 
-Data: 26 de abril de 2026
-Empresa: Abstergo Industries 
-Responsável: Matheus Maia
+- Data: 26 de abril de 2026
+- Empresa: Abstergo Industries
+- Responsável: Matheus Maia
 
 ## Introdução
 Este relatório apresenta o processo de implementação de ferramentas na Abstergo Industries, realizado por Matheus Maia, visando a otimização da infraestrutura em nuvem. O objetivo central é elencar 3 serviços AWS estratégicos que proporcionam redução de custos imediatos e maior eficiência operacional através da gestão inteligente de recursos.
